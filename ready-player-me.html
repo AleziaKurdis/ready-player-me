@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<!--
+//
+//  ready-player-me.html
+//
+//  Created by makitsune, January 8th, 2021.
+//  Copyright 2021, Tivoli Cloud VR inc.
+//  Copyright 2022, Overte e.V.
+//
+//  html for the ui of the ready-player-me application.
+//
+//  Distributed under the Apache License, Version 2.0.
+//  See the accompanying file LICENSE or http://www.apache.org/licenses/LICENSE-2.0.html
+//
+-->
+<html>
+	<head>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" />
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+		<style>
+			body {
+				font-family: "Roboto", sans-serif;
+				margin: 0;
+                background-color: #000000;
+			}
+
+			h2 {
+				font-weight: 400;
+			}
+
+			.container {
+				width: 100vw;
+				height: 100vh;
+				background-color: #000000;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
+			.mat-elevation-z4 {
+				box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%),
+					0px 4px 5px 0px rgb(0 0 0 / 14%),
+					0px 1px 10px 0px rgb(0 0 0 / 12%);
+			}
+
+			.container .dialog {
+				width: 450px;
+				border-radius: 8px;
+				background-color: #2A2D44;
+				padding: 32px;
+			}
+
+			input[type="text"] {
+				font-family: "Roboto", sans-serif;
+				font-size: 1em;
+				border: none;
+				padding-bottom: 4px;
+				border-bottom: solid 1px rgba(0, 0, 0, 0.42);
+				margin-bottom: 1px;
+				transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+			}
+
+			input[type="text"]:focus {
+				outline: none;
+				border-bottom: solid 2px #30cbd4;
+				margin-bottom: 0px;
+			}
+
+			button {
+				font-family: "Roboto", sans-serif;
+				font-size: 1em;
+				padding: 6px 12px;
+				border: none;
+				background-color: #30cbd4;
+				color: #fff;
+				border-radius: 4px;
+				font-weight: 500;
+			}
+
+			button:focus {
+				outline: none;
+			}
+
+			/* https://codepen.io/holdencreative/pen/vEVbwv */
+			.progress {
+				position: relative;
+				height: 4px;
+				display: block;
+				width: 100%;
+				background-color: #90dee2;
+				background-clip: padding-box;
+				margin: 0.5rem 0 0 0;
+				overflow: hidden;
+			}
+			.progress .indeterminate {
+				background-color: #30cbd4;
+			}
+			.progress .indeterminate:before {
+				content: "";
+				position: absolute;
+				background-color: inherit;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				will-change: left, right;
+				-webkit-animation: indeterminate 2.1s
+					cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
+				animation: indeterminate 2.1s
+					cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
+			}
+			.progress .indeterminate:after {
+				content: "";
+				position: absolute;
+				background-color: inherit;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				will-change: left, right;
+				-webkit-animation: indeterminate-short 2.1s
+					cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
+				animation: indeterminate-short 2.1s
+					cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
+				-webkit-animation-delay: 1.15s;
+				animation-delay: 1.15s;
+			}
+
+			@keyframes indeterminate {
+				0% {
+					left: -35%;
+					right: 100%;
+				}
+				60% {
+					left: 100%;
+					right: -90%;
+				}
+				100% {
+					left: 100%;
+					right: -90%;
+				}
+			}
+
+			@keyframes indeterminate-short {
+				0% {
+					left: -200%;
+					right: 100%;
+				}
+				60% {
+					left: 107%;
+					right: -8%;
+				}
+				100% {
+					left: 107%;
+					right: -8%;
+				}
+			}
+
+			.ready-player-me {
+				position: absolute;
+				margin: auto;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				right: 0;
+			}
+
+			@keyframes mat-progress-spinner-stroke-rotate-100 {
+				0% {
+					stroke-dashoffset: 268.606171575px;
+					transform: rotate(0);
+				}
+				12.5% {
+					stroke-dashoffset: 56.5486677px;
+					transform: rotate(0);
+				}
+				12.5001% {
+					stroke-dashoffset: 56.5486677px;
+					transform: rotateX(180deg) rotate(72.5deg);
+				}
+				25% {
+					stroke-dashoffset: 268.606171575px;
+					transform: rotateX(180deg) rotate(72.5deg);
+				}
+				25.0001% {
+					stroke-dashoffset: 268.606171575px;
+					transform: rotate(270deg);
+				}
+				37.5% {
+					stroke-dashoffset: 56.5486677px;
+					transform: rotate(270deg);
+				}
+				37.5001% {
+					stroke-dashoffset: 56.5486677px;
+					transform: rotateX(180deg) rotate(161.5deg);
+				}
+				50% {
+					stroke-dashoffset: 268.606171575px;
+					transform: rotateX(180deg) rotate(161.5deg);
+				}
+				50.0001% {
+					stroke-dashoffset: 268.606171575px;
+					transform: rotate(180deg);
+				}
+				62.5% {
+					stroke-dashoffset: 56.5486677px;
+					transform: rotate(180deg);
+				}
+				62.5001% {
+					stroke-dashoffset: 56.5486677px;
+					transform: rotateX(180deg) rotate(251.5deg);
+				}
+				75% {
+					stroke-dashoffset: 268.606171575px;
+					transform: rotateX(180deg) rotate(251.5deg);
+				}
+				75.001% {
+					stroke-dashoffset: 268.606171575px;
+					transform: rotate(90deg);
+				}
+				87.5% {
+					stroke-dashoffset: 56.5486677px;
+					transform: rotate(90deg);
+				}
+				87.5001% {
+					stroke-dashoffset: 56.5486677px;
+					transform: rotateX(180deg) rotate(341.5deg);
+				}
+				100% {
+					stroke-dashoffset: 268.606171575px;
+					transform: rotateX(180deg) rotate(341.5deg);
+				}
+			}
+
+			@keyframes mat-progress-spinner-linear-rotate {
+				0% {
+					transform: rotate(0deg);
+				}
+				100% {
+					transform: rotate(360deg);
+				}
+			}
+
+			.progress-spinner {
+				width: 64px;
+				height: 64px;
+				animation: mat-progress-spinner-linear-rotate 2000ms linear
+					infinite;
+			}
+
+			.progress-spinner circle {
+				stroke-dasharray: 282.743px;
+				stroke-width: 10%;
+				stroke: #30cbd4;
+				animation-name: mat-progress-spinner-stroke-rotate-100;
+				animation-duration: 4000ms;
+				animation-timing-function: cubic-bezier(0.35, 0, 0.25, 1);
+				animation-iteration-count: infinite;
+				fill: transparent;
+				transform-origin: center;
+				transition: stroke-dashoffset 225ms linear;
+				transition-property: stroke;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="loading" class="container" style="background-color: #000000; flex-direction: column">
+			<svg class="progress-spinner" focusable="false" viewBox="0 0 100 100" >
+				<circle cx="50%" cy="50%" r="45"></circle>
+			</svg>
+		</div>
+		<iframe id="create" class="ready-player-me" src="https://vircadia.readyplayer.me" allow="camera *; microphone *" style="border: none; width: 100vw; height: 100vh"></iframe>
+		<div id="publish" class="container" style="display: none">
+			<div id="upload" class="dialog mat-elevation-z4" style="display: none;">
+				<form style="display: flex; flex-direction: row; align-items: center; margin-bottom: 0;">
+                    <table width='100%'>
+                    <tr><td colspan='2'>
+                        <button id="wear" onclick="wearAvatar();">Wear this avatar</button>
+                    </td></tr>
+                    <tr><td colspan='2'>
+                        <font color='#ffffff'>OR</font>
+                    </td></tr>
+                    <tr><td width='60%'>
+                        <input id="upload-name" type="text" autocomplete="off" style="width:100%; padding-left: 0px" />
+                    </td><td align='right'>
+                        <button id="wearAndBookmark" onclick="wearAndBookmarkAvatar(getElementById('upload-name').value);">Wear and bookmark</button>
+                    </td></tr>
+                    </table>
+				</form>
+			</div>
+			<div id="uploading" class="dialog mat-elevation-z4" style="display: none">
+				<h2 style="margin-top: 0">
+					Adding avatar...
+					<span id="uploading-name" style="font-weight: 500"></span>...
+				</h2>
+				<div class="progress">
+					<div class="indeterminate"></div>
+				</div>
+			</div>
+		</div>
+		<script>
+			let displayName = "";
+			let avatarUrl = "";
+
+			let emitEvent = () => {};
+
+			if (window.qt) {
+				const uuid = "com.overte.readyPlayerMe";
+
+				EventBridge.scriptEventReceived.connect(jsonStr => {
+					let data = null;
+					try {
+						data = JSON.parse(jsonStr);
+					} catch (err) {
+						return;
+					}
+					if (!data.uuid && !data.key) return;
+					if (!data.uuid.includes(uuid)) return;
+
+					switch (data.key) {
+						case "displayName":
+							displayName = data.value;
+							break;
+					}
+				});
+
+				emitEvent = (key, value) => {
+					EventBridge.emitWebEvent(
+						JSON.stringify({ uuid, key, value })
+					);
+				};
+
+				emitEvent("displayName");
+			}
+
+			function getName() {
+				const date = new Date();
+
+				const day = [
+					date.getFullYear(),
+					String(date.getMonth() + 1).padStart(2, "0"),
+					String(date.getDate()).padStart(2, "0")
+				].join("-");
+
+				const time = [
+					String(date.getHours()).padStart(2, "0"),
+					String(date.getMinutes()).padStart(2, "0"),
+					String(date.getSeconds()).padStart(2, "0")
+				].join(":");
+
+				return displayName + " " + day + " " + time;
+			}
+
+			const d = document;
+
+            function wearAvatar() {
+				d.getElementById("upload").style.display = "none";
+				d.getElementById("uploading").style.display = "";
+
+                emitEvent("finish", { "avatarUrl": avatarUrl, "bookmarkName": "" });
+            }
+
+            function wearAndBookmarkAvatar(name) {
+				d.getElementById("upload").style.display = "none";
+				d.getElementById("uploading").style.display = "";
+
+                emitEvent("finish", { "avatarUrl": avatarUrl, "bookmarkName": name });
+            }
+            
+			function onAvatarUrl() {
+				d.getElementById("loading").style.display = "none";
+				d.getElementById("create").style.display = "none";
+				d.getElementById("publish").style.display = "";
+				d.getElementById("upload").style.display = "";
+				d.getElementById("upload-name").value = getName();
+			}
+
+			function onMessage(event) {
+				const url = event.data;
+				if (url.startsWith("http") && url.endsWith("glb")) {
+					window.removeEventListener("message", onMessage, false);
+					avatarUrl = url;
+					onAvatarUrl();
+				}
+			}
+
+			window.addEventListener("message", onMessage, false);
+		</script>
+	</body>
+</html>
