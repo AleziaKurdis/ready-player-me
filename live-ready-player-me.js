@@ -60,7 +60,7 @@
     });
 
     function setActive(active) {
-        overlayWebWindow.setURL(Script.resolvePath("ready-player-me.html") + "?1");
+        overlayWebWindow.setURL(Script.resolvePath("ready-player-me-live.html") + "?1");
         overlayWebWindow.setVisible(active);
     }
 
