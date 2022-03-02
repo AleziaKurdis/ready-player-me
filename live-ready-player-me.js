@@ -50,7 +50,7 @@
                 emitEvent("displayName", displayName);
                 break;
             case "finish":
-                MyAvatar.useFullAvatarURL(data.value.avatarUrl);
+                MyAvatar.useFullAvatarURL(data.value.avatarUrl + "?version=" + Math.floor(Math.random() * 65000) );
                 
                 if (data.value.bookmarkName !== "") {
                     AvatarBookmarks.addBookmark(data.value.bookmarkName);
