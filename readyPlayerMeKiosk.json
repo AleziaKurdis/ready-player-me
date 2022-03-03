@@ -1,0 +1,24 @@
+{
+  "DataVersion": 0,
+  "Entities": [
+    {
+    "id": "{164a499e-f008-4893-99e9-8cb1bb57d87d}",
+    "type": "Model",
+    "name": "READY-PLAYER-ME_KIOSK",
+    "dimensions": {
+        "x": 1.3380942344665527,
+        "y": 2.3340516090393066,
+        "z": 1.1588237285614014
+    },
+    "grab": {
+        "grabbable": false
+    },
+    "script": "https://aleziakurdis.github.io/ready-player-me/live-ready-player-me.js",
+    "shapeType": "simple-hull",
+    "modelURL": "https://aleziakurdis.github.io/ready-player-me/kiosk.fst",
+    "useOriginalPivot": true
+}
+    ],
+  "Id": "{a3090fd2-aba8-4a5e-a3da-109d504e2f58}",
+  "Version": 133
+}
