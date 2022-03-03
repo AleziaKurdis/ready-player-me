@@ -3,10 +3,10 @@ Overte Application to create avatar from the "Ready Player Me" 3rd party avatar 
   
 to Install the Overte Application:  
 https://aleziakurdis.github.io/ready-player-me/app-ready-player-me.js  
-(To install in "Overte" interface: Edit > Running Scripts... Load scripts from url)  
+(To install in "Overte" interface: "Edit" > "Running Scripts..." > "Load scripts from url")  
   
   
-Script for a kiosk button opening the application:  
-https://aleziakurdis.github.io/ready-player-me/live-ready-player-me.js  
-
+To install the in-world kiosk:  
+https://aleziakurdis.github.io/ready-player-me/readyPlayerMeKiosk.json  
+(To install in-world, from "Overte" interface: "Edit" > "Import Entities (.json) From a URL")  
    
